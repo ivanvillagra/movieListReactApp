@@ -2,14 +2,7 @@ import pool from "../../lib/db";
 
 export default async function Home() {
 
-  const client = await pool.connect();
-  try {
-    const result = await client.query(`
-      SELECT * from public.users
-    `);    console.log(result.rows);
-  } finally {
-    client.release();
-  }
+
   
   return (
     <div className="container flex justify-center items-center h-full w-full">
